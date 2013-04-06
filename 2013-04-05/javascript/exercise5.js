@@ -316,8 +316,8 @@ cells = [[0,1,2],[1,2,3]]
 step2D = SIMPLICIAL_COMPLEX(verts)(cells)
 step3D = MAP([S1,S3,S2])(EXTRUDE([10.25])(step2D))
 
-ramp1 = STRUCT(NN(10)([step3D,T([1,3])([depth,raiser])]))
-ramp1T = T([1,2])([20.89,2.5+47.5+2.5])(ramp1)
+stair1 = STRUCT(NN(10)([step3D,T([1,3])([depth,raiser])]))
+stair1T = T([1,2])([20.89,2.5+47.5+2.5])(stair1)
 
 
 depth2 = 3.16;
@@ -328,15 +328,15 @@ cells2 = [[0,1,2],[1,2,3]]
 step2D_2 = SIMPLICIAL_COMPLEX(verts2)(cells2)
 step3D_2 = MAP([S1,S3,S2])(EXTRUDE([10.25])(step2D_2))
 
-ramp2 = STRUCT(NN(12)([step3D_2,T([1,3])([depth2,raiser2])]))
-ramp2T = T([1,2,3])([10.5,2.5+47.5+2.5,25+1])(ramp2)
+stair2 = STRUCT(NN(12)([step3D_2,T([1,3])([depth2,raiser2])]))
+stair2T = T([1,2,3])([10.5,2.5+47.5+2.5,25+1])(stair2)
 
-ramp3 = STRUCT(NN(12)([step3D_2,T([1,3])([depth2,raiser2])]))
-ramp3T = T([1,2,3])([57.07,2.5+47.5+2.5,25+1+24+1])(ramp3)
+stair3 = STRUCT(NN(12)([step3D_2,T([1,3])([depth2,raiser2])]))
+stair3T = T([1,2,3])([57.07,2.5+47.5+2.5,25+1+24+1])(stair3)
 
-ramps = STRUCT([ramp1T,ramp2T,ramp3T])
+stairs = STRUCT([stair1T,stair2T,stair3T])
 
-building5 = STRUCT([building4,ramps])
+building5 = STRUCT([building4,stairs])
 VIEW(building5)
 
 
