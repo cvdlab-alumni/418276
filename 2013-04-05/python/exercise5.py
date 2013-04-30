@@ -281,8 +281,8 @@ raiser = 2.55;
 step2D = MKPOL([[[0,0],[0,1.4+raiser],[depth,raiser],[depth,1.4+raiser]],[[1,2,3,4]],None])
 step3D = MAP([S1,S3,S2])(PROD([step2D,Q(10.25)]))
 
-ramp1 = STRUCT(NN(10)([step3D,T([1,3])([depth,raiser])]))
-ramp1T = T([1,2])([20.89,2.5+47.5+2.5])(ramp1)
+stair1 = STRUCT(NN(10)([step3D,T([1,3])([depth,raiser])]))
+stair1T = T([1,2])([20.89,2.5+47.5+2.5])(stair1)
 
 depth2 = 3.16;
 raiser2 = 2.05;
@@ -290,15 +290,15 @@ raiser2 = 2.05;
 step2D_2 = MKPOL([[[0,0],[0,1.4+raiser2],[depth2,raiser2],[depth2,1.4+raiser2]],[[1,2,3,4]],None])
 step3D_2 = MAP([S1,S3,S2])(PROD([step2D_2,Q(10.25)]))
 
-ramp2 = STRUCT(NN(12)([step3D_2,T([1,3])([depth2,raiser2])]))
-ramp2T = T([1,2,3])([10.5,2.5+47.5+2.5,25+1])(ramp2)
+stair2 = STRUCT(NN(12)([step3D_2,T([1,3])([depth2,raiser2])]))
+stair2T = T([1,2,3])([10.5,2.5+47.5+2.5,25+1])(stair2)
 
-ramp3 = STRUCT(NN(12)([step3D_2,T([1,3])([depth2,raiser2])]))
-ramp3T = T([1,2,3])([57.07,2.5+47.5+2.5,25+1+24+1])(ramp3)
+stair3 = STRUCT(NN(12)([step3D_2,T([1,3])([depth2,raiser2])]))
+stair3T = T([1,2,3])([57.07,2.5+47.5+2.5,25+1+24+1])(stair3)
 
-ramps = STRUCT([ramp1T,ramp2T,ramp3T])
+stairs = STRUCT([stair1T,stair2T,stair3T])
 
-building5 = STRUCT([building4,ramps])
+building5 = STRUCT([building4,stairs])
 VIEW(building5)
 
 
