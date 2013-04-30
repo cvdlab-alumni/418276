@@ -154,7 +154,7 @@ floor3 = STRUCT([hpartition31,hpartition32,hpartition33,hpartition34,hpartition3
 //VIEW(floor3)
 
 hpartition41 = GRID([[2.5],[65],[-1,-25,-1,-24,-1,-24,-1,-23,2]])
-hpartition42 = GRID([[2.5,25,2.5,25],[2.5,-51.18,11.32],[-1,-25,-1,-24,-1,-24,-1,-23,2]])
+hpartition42 = GRID([[2.5,25,2.5,25],[2.5,-41.18,21.32],[-1,-25,-1,-24,-1,-24,-1,-23,2]])
 hpartition43 = GRID([[-2.5,-25,-2.5,-25,2.5,25,2.5,25,2.5],[65],[-1,-25,-1,-24,-1,-24,-1,-23,2]])
 floor4 = STRUCT([hpartition41,hpartition42,hpartition43])
 //VIEW(floor4)
