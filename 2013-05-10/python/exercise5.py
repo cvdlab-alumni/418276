@@ -408,23 +408,25 @@ steeringWheelPos = T([1,2,3])([11,4,-4])(R([1,3])(PI/2)(steeringWheelSuMisura))
 #VIEW(steeringWheel)
 
 modelEx4 = STRUCT([modelEx2,modelEx3,steeringWheelPos])
-VIEW(modelEx4)
+#VIEW(modelEx4)
 
 '''
 Exercise5.
 Create at least two interesting car surfaces and add them to the mock-up.
 '''
 
+#fari vista avanti
 p0faro = [[1.9,2.8],[2,2.4],[3.5,2.3],[3.4,2.8]]
 p1faro = [[1.9,2.8],[2,3.4],[3.5,3.3],[3.4,2.8]]
 cu0FaroSup = BEZIER(S1)(p0faro)
 cu1FaroSup = BEZIER(S1)(p1faro)
 faroSurfacePrimo = COLOR(YELLOW)(MAP(BEZIER(S2)([cu0FaroSup,cu1FaroSup]))(GRID([20,20])))
 faroSurfaceSecondo = R([1,3])(PI)(faroSurfacePrimo)
-fariSurfacePosizionati = S([2])([0.9])(R([1,3])(PI)(STRUCT([faroSurfacePrimo,faroSurfaceSecondo])))
+fariSurfacePosizionati = S([2])([0.9])(R([1,3])(PI/2)(STRUCT([faroSurfacePrimo,faroSurfaceSecondo])))
+result = T([1,3])([20,-4])(fariSurfacePosizionati)
 
-modelEx5 = STRUCT([modelEx2,modelEx3,modelEx4,fariSurfacePosizionati])
-#VIEW(modelEx5)
+modelEx5 = STRUCT([modelEx2,modelEx3,modelEx4,result])
+VIEW(modelEx5)
 
 
 
